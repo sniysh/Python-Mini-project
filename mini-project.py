@@ -29,7 +29,7 @@ course_subjects = {
     },
 }
 
-# Function to display subjects based on course name and semester number
+# display subjects based on course name and semester number
 def display_subjects():
     course = course_combo.get()
     semester = semester_combo.get()
@@ -44,33 +44,33 @@ def display_subjects():
         subject_text.delete(1.0, tk.END)
         subject_text.insert(tk.END, "Course or semester not found.")
 
-# Create the main window
+# creates the main window
 window = tk.Tk()
 window.title("MSBTE Course Subjects")
 
-# create a label for course name selection
+# creates a label for course name selection
 course_label = tk.Label(window, text="Select the course:")
 course_label.pack()
 
-# create a dropdown menu 
+# creates a dropdown menu 
 course_combo = ttk.Combobox(window, values=list(course_subjects.keys()))
 course_combo.pack()
 
-# Create a label for semester number selection
+# creates a label for semester number selection
 semester_label = tk.Label(window, text="Select the semester:")
 semester_label.pack()
 
-# Create a dropdown menu for semester number
+# create a dropdown menu for semester number
 semester_combo = ttk.Combobox(window, values=[1, 2, 3, 4, 5, 6])
 semester_combo.pack()
 
-# Create a button to display subjects
+# button to display subjects
 display_button = tk.Button(window, text="Display Subjects", command=display_subjects)
 display_button.pack()
 
-# Create a text widget to display the subjects
+# creates a text widget to display the subjects
 subject_text = tk.Text(window, height=6, width=30)
 subject_text.pack()
 
-# Run the GUI main loop
+# main loop
 window.mainloop()
